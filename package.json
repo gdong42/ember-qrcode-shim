@@ -1,6 +1,6 @@
 {
   "name": "ember-qrcode-shim",
-  "version": "0.0.4",
+  "version": "0.0.10a",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",

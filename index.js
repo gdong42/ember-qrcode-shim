@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'qrcode',
+  name: 'ember-qrcode-shim',
   included: function included(app) {
     this._super.included(app);
     app.import('vendor/qrcode.js', {

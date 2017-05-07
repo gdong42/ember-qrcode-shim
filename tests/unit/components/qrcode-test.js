@@ -4,7 +4,7 @@ import Ember from 'ember';
 
 let App;
 
-moduleForComponent('qrcode', 'QRCode', {
+moduleForComponent('qr-code', 'QRCode', {
   beforeEach: function() {
     App = startApp();
   },

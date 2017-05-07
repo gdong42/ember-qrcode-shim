@@ -5,14 +5,14 @@ export default Ember.Component.extend({
 
   tagName: 'div',
 
-  text: null,
+  data: null,
 
   didInsertElement: function() {
     // ...
     Ember.Logger.debug('did insert qrcode');
-    const text = this.get('text');
+    const data = this.get('data');
     let qrcode = new QRCode('test', {
-      text: text,
+      text: data,
       width: 128,
       height: 128,
       colorDark: '#000000',
@@ -24,7 +24,7 @@ export default Ember.Component.extend({
 
   willDestroyElement: function() {
     Ember.Logger.debug('did destroy qrcode');
-    this.get('qrcode').destroy();
+    this.get('qrcode').clear();
   },
 });
 
