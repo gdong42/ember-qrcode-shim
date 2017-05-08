@@ -14,7 +14,7 @@ moduleForComponent('qr-code', 'QRCode', {
 });
 
 test('is a div tag', function(assert) {
-    assert.equal('div', this.$().prop('tagName'));
+    assert.equal(this.$().prop('tagName'), 'div');
 
     this.subject().teardownQRCode();
 });
