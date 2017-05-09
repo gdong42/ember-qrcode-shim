@@ -17,8 +17,6 @@ export default Ember.Component.extend({
   quality: 'Q',
 
   didInsertElement: function() {
-    // ...
-    Ember.Logger.debug('did insert qrcode');
     const data = this.get('data');
     const elementId = this.get('elementId');
     const quality = this.get('quality');
@@ -39,7 +37,6 @@ export default Ember.Component.extend({
   },
 
   willDestroyElement: function() {
-    Ember.Logger.debug('did destroy qrcode');
     this.get('qrcode').clear();
   },
 });
