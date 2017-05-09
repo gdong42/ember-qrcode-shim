@@ -1,7 +1,7 @@
 {
   "name": "ember-qrcode-shim",
-  "version": "0.0.12a",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.13a",
+  "description": "An ember wrapper of qrcode.js",
   "directories": {
     "doc": "doc",
     "test": "tests"

@@ -3,35 +3,35 @@ import QRCode from 'qrcode';
 
 export default Ember.Component.extend({
 
-  data: null,
+  text: null,
 
   light: '#ffffff',
 
-  dark: '#000000',
+  colorDark: '#000000',
 
   width: 128,
 
   height: 128,
 
   // L/M/Q/H
-  quality: 'Q',
+  correctLevel: 'Q',
 
   didInsertElement: function() {
-    const data = this.get('data');
+    const text = this.get('text');
     const elementId = this.get('elementId');
-    const quality = this.get('quality');
-    const light = this.get('light');
-    const dark = this.get('dark');
+    const correctLevel = this.get('correctLevel');
+    const colorLight = this.get('colorLight');
+    const colorDark = this.get('colorDark');
     const width = this.get('width');
     const height = this.get('height');
     
     let qrcode = new QRCode(elementId, {
-      text: data,
-      width: width,
-      height: height,
-      colorDark: dark,
-      colorLight: light,
-      correctLevel: QRCode.CorrectLevel[quality],
+      text,
+      width,
+      height,
+      colorDark,
+      colorLight,
+      correctLevel: QRCode.CorrectLevel[correctLevel],
     });
     this.set('qrcode', qrcode);
   },
