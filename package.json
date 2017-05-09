@@ -1,6 +1,6 @@
 {
   "name": "ember-qrcode-shim",
-  "version": "0.0.13a",
+  "version": "0.1",
   "description": "An ember wrapper of qrcode.js",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "gdong42/ember-qrcode-shim",
   "engines": {
     "node": ">= 0.10.0"
   },
