@@ -1,6 +1,7 @@
 # Ember-qrcode-shim
 
 An ember wrapper of [qrcode.js](https://davidshimjs.github.io/qrcodejs/), a tool to generate QR Code on client side.
+[![NPM](https://nodei.co/npm/ember-qrcode-shim.png)](https://www.npmjs.com/package/ember-qrcode-shim)
 
 ## Installation
 
