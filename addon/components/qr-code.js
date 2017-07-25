@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   text: null,
 
-  light: '#ffffff',
+  colorLight: '#ffffff',
 
   colorDark: '#000000',
 
