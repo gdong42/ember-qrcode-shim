@@ -39,5 +39,9 @@ export default Ember.Component.extend({
   willDestroyElement: function() {
     this.get('qrcode').clear();
   },
+
+  _recreateCode: Ember.observer('text', function() {
+    this.get('qrcode').makeCode(this.get('text'));
+  })
 });
 
