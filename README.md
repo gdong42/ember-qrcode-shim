@@ -3,26 +3,28 @@
 An ember wrapper of [qrcode.js](https://davidshimjs.github.io/qrcodejs/), a tool to generate QR Code on client side.
 [![NPM](https://nodei.co/npm/ember-qrcode-shim.png)](https://www.npmjs.com/package/ember-qrcode-shim)
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 * `ember install ember-qrcode-shim`
 
-## Running
+### Linting
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
 
-## Running Tests
+### Running tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `ember try:each` – Runs the test suite against multiple Ember versions
 
-## Building
+### Running the dummy application
 
-* `ember build`
+* `ember serve`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
 ## Usage
 
@@ -30,7 +32,7 @@ For more information on using ember-cli, visit [http://ember-cli.com/](http://em
 
 Example
 
-`{{qr-code text=channel.url colorLight="#F7F7F7" width=155 height=155 correctLevel="L"}}`
+`{{qr-code text="http://www.example.com" colorLight="#F7F7F7" width=155 height=155 correctLevel="L"}}`
 
 Config arguments provided by qrcode.js are also provided as component attributes with same key names. They are
 
@@ -49,3 +51,4 @@ You can also import qrcode.js as an ES6 module, so that you can have full contro
 import QRCode from 'qrcode';
 ...
 ```
+This project is licensed under the [MIT License](LICENSE.md).

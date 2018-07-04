@@ -1,3 +1,8 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Welcome to ember-qrcode-shim</h2>
+
+<p>Type in below input:</p>
+{{input value=welcome}}
+<p/>
+{{qr-code text=welcome colorLight="#FFFFFF" width=320 height=320 correctLevel="L"}}
 
 {{outlet}}

@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { observer } from '@ember/object';
 import QRCode from 'qrcode';
 
-export default Ember.Component.extend({
+export default Component.extend({
 
   text: null,
 
@@ -40,7 +41,7 @@ export default Ember.Component.extend({
     this.get('qrcode').clear();
   },
 
-  _recreateCode: Ember.observer('text', function() {
+  _recreateCode: observer('text', function() {
     this.get('qrcode').makeCode(this.get('text'));
   })
 });
