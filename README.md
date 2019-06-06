@@ -3,6 +3,15 @@
 An ember wrapper of [qrcode.js](https://davidshimjs.github.io/qrcodejs/), a tool to generate QR Code on client side.
 [![NPM](https://nodei.co/npm/ember-qrcode-shim.png)](https://www.npmjs.com/package/ember-qrcode-shim)
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 
@@ -26,7 +35,8 @@ Installation
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-## Usage
+Usage
+------------------------------------------------------------------------------
 
 ### As `qr-code` Component
 
@@ -51,4 +61,14 @@ You can also import qrcode.js as an ES6 module, so that you can have full contro
 import QRCode from 'qrcode';
 ...
 ```
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
 This project is licensed under the [MIT License](LICENSE.md).
+
