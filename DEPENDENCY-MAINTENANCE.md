@@ -51,7 +51,7 @@ After this consolidation is reviewed and merged, the old PRs can be closed as su
 
 ## Verified results (2026-10-02)
 
-Local Node 24.21.0 / npm 11.12.0 and Chrome 154:
+Local Node 24.21.0 / npm 11.19.0 and Chrome 154:
 
 - `npm ci`: passed from the final lockfile.
 - `npm run lint`: JavaScript and templates passed.
