@@ -7,9 +7,19 @@ An ember wrapper of [qrcode.js](https://davidshimjs.github.io/qrcodejs/), a tool
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v2.18 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
+* The classic `qr-code` component and `qrcode` ES module APIs are retained.
+* The historical compatibility claim was Ember.js 2.18+ / Ember CLI 2.13+. This maintenance change tests Ember 3.28 and 4.12; compatibility with 2.18 and other versions is not yet confirmed. No new Ember minimum is inferred from the development CLI version.
+* Downstream installation/build tooling requires the Node versions supported by `ember-cli-babel` 8: Node 16.x, 18.x, or 20 and above. Node 16 is a technical minimum, is end-of-life, and is **not** a recommended environment. The technical minimum is not tested here.
+* Working on this repository requires Node 22 or 24 LTS because the Ember CLI 6.12 development toolchain has higher requirements. Use Node 24 LTS for local development; CI tests Node 22 and 24.
+* This is a breaking Node toolchain compatibility change from the previous Node 8 claim. Projects that cannot update their build environment can keep the published `ember-qrcode-shim@0.4.0` until they can migrate; that older dependency tree still has known advisories.
+* Node runs in developers' local/CI build environments. Site visitors do not need Node to render QR codes. Babel runtime helpers can be bundled into application JavaScript, so build dependencies and bundled runtime code must still be audited.
+
+Development
+------------------------------------------------------------------------------
+
+Use a supported Node LTS, then run `npm ci`, `npm run lint`, `npm test`, and `npm run build -- --environment=production`.
+Run `npm run test:all` for the Ember 3.28/4.12 compatibility scenarios. The Ember 3.28 scenario uses CLI 4.12 because it still calls `project.bowerDependencies`, which CLI 6 removed. That older CLI is isolated to compatibility testing; the locked development baseline uses CLI 6.12.
+
 
 
 Installation

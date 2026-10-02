@@ -1,83 +1,34 @@
 'use strict';
 
-const getChannelURL = require('ember-source-channel-url');
-
-module.exports = function() {
-  return Promise.all([
-    getChannelURL('release'),
-    getChannelURL('beta'),
-    getChannelURL('canary')
-  ]).then((urls) => {
-    return {
-      scenarios: [
-        {
-          name: 'ember-lts-2.18',
-          env: {
-            EMBER_OPTIONAL_FEATURES: JSON.stringify({ 'jquery-integration': true })
-          },
-          npm: {
-            devDependencies: {
-              '@ember/jquery': '^0.5.1',
-              'ember-source': '~2.18.0'
-            }
-          }
-        },
-        {
-          name: 'ember-lts-3.4',
-          npm: {
-            devDependencies: {
-              'ember-source': '~3.4.0'
-            }
-          }
-        },
-        {
-          name: 'ember-release',
-          npm: {
-            devDependencies: {
-              'ember-source': urls[0]
-            }
-          }
-        },
-        {
-          name: 'ember-beta',
-          npm: {
-            devDependencies: {
-              'ember-source': urls[1]
-            }
-          }
-        },
-        {
-          name: 'ember-canary',
-          npm: {
-            devDependencies: {
-              'ember-source': urls[2]
-            }
-          }
-        },
-        // The default `.travis.yml` runs this scenario via `npm test`,
-        // not via `ember try`. It's still included here so that running
-        // `ember try:each` manually or from a customized CI config will run it
-        // along with all the other scenarios.
-        {
-          name: 'ember-default',
-          npm: {
-            devDependencies: {}
-          }
-        },
-        {
-          name: 'ember-default-with-jquery',
-          env: {
-            EMBER_OPTIONAL_FEATURES: JSON.stringify({
-              'jquery-integration': true
-            })
-          },
-          npm: {
-            devDependencies: {
-              '@ember/jquery': '^0.5.1'
-            }
-          }
+module.exports = {
+  packageManager: 'npm',
+  npmOptions: ['--prefer-offline'],
+  scenarios: [
+    {
+      name: 'ember-3.28',
+      env: { EMBER_OPTIONAL_FEATURES: JSON.stringify({ 'jquery-integration': false }) },
+      npm: {
+        devDependencies: {
+          // Ember 3.28 still requires the CLI's removed bowerDependencies API.
+          'ember-cli': '~4.12.3',
+          'ember-source': '~3.28.12',
+          'ember-qunit': '^6.2.0',
+          '@ember/test-helpers': '^2.9.4',
+          'ember-resolver': '^8.1.0'
         }
-      ]
-    };
-  });
+      }
+    },
+    {
+      name: 'ember-4.12',
+      npm: {
+        devDependencies: {
+          'ember-cli': '~6.12.0',
+          'ember-source': '~4.12.4',
+          'ember-qunit': '^8.1.1',
+          '@ember/test-helpers': '^3.3.1',
+          'ember-resolver': '^11.0.1'
+        }
+      }
+    }
+  ]
 };

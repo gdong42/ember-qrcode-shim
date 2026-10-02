@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import { observer } from '@ember/object';
 import QRCode from 'qrcode';
 
 export default Component.extend({
@@ -18,6 +17,7 @@ export default Component.extend({
   correctLevel: 'Q',
 
   didInsertElement: function() {
+    this._super(...arguments);
     const text = this.get('text');
     const elementId = this.get('elementId');
     const correctLevel = this.get('correctLevel');
@@ -38,11 +38,19 @@ export default Component.extend({
   },
 
   willDestroyElement: function() {
-    this.get('qrcode').clear();
+    this._super(...arguments);
+    const qrcode = this.get('qrcode');
+    if (qrcode) {
+      qrcode.clear();
+    }
   },
 
-  _recreateCode: observer('text', function() {
-    this.get('qrcode').makeCode(this.get('text'));
-  })
+  didUpdateAttrs() {
+    this._super(...arguments);
+    const qrcode = this.get('qrcode');
+    if (qrcode) {
+      qrcode.makeCode(this.get('text'));
+    }
+  }
 });
 
