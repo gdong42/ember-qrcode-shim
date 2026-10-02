@@ -7,9 +7,9 @@ An ember wrapper of [qrcode.js](https://davidshimjs.github.io/qrcodejs/), a tool
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember: tested on 3.28 and 4.12; historical 2.18+ support remains unverified.
-* Consumer builds: Node 16.x, 18.x, or >=20 (raised from Node 8; minimum untested).
-* Development/tests: use verified Node 22/24 LTS. Node 16/18 are end-of-life.
+* Ember: tested on 2.18, 3.28, and 4.12.
+* Consumer builds: Node 16.x, 18.x, or >=20 (raised from Node 6/8; minimum untested).
+* Development/tests: Node 22/24 LTS; use Node 22 for legacy Ember. Node 16/18 are end-of-life.
 
 
 Installation
