@@ -19,41 +19,47 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "test:all": "ember try:each"
+    "test:all": "ember try:each",
+    "lint": "npm run lint:js && npm run lint:hbs"
   },
   "dependencies": {
-    "ember-cli-babel": "^7.7.3"
+    "ember-cli-babel": "^8.3.2"
   },
   "devDependencies": {
-    "@ember/optional-features": "^0.7.0",
+    "@ember/optional-features": "^2.2.0",
+    "@ember/test-helpers": "^3.3.1",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-cli": "~3.10.1",
-    "ember-cli-dependency-checker": "^3.1.0",
-    "ember-cli-eslint": "^5.1.0",
-    "ember-cli-htmlbars": "^3.0.1",
-    "ember-cli-htmlbars-inline-precompile": "^2.1.0",
-    "ember-cli-inject-live-reload": "^1.8.2",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-template-lint": "^1.0.0-beta.1",
-    "ember-cli-uglify": "^2.1.0",
-    "ember-disable-prototype-extensions": "^1.1.3",
-    "ember-export-application-global": "^2.0.0",
-    "ember-load-initializers": "^2.0.0",
-    "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-qunit": "^4.4.1",
-    "ember-resolver": "^5.0.1",
-    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/release/shas/c19a7eb380275acb1af802353ba6403adaef971e.tgz",
-    "ember-source-channel-url": "^1.1.0",
-    "ember-try": "^1.0.0",
-    "eslint-plugin-ember": "^6.2.0",
-    "eslint-plugin-node": "^9.0.1",
+    "ember-auto-import": "^2.13.1",
+    "ember-cli": "~6.12.0",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-terser": "^4.0.2",
+    "ember-load-initializers": "^2.1.2",
+    "ember-qunit": "^8.1.1",
+    "ember-resolver": "^11.0.1",
+    "ember-source": "~4.12.4",
+    "ember-template-lint": "^5.13.0",
+    "ember-try": "^4.0.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-ember": "^12.7.5",
+    "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.8.4"
+    "qunit": "^2.24.1",
+    "qunit-dom": "^3.4.0",
+    "webpack": "^5.111.1"
   },
   "engines": {
-    "node": "8.* || >= 10.*"
+    "node": "16.* || 18.* || >= 20"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "overrides": {
+    "tmp": "^0.2.6",
+    "@babel/runtime": "^7.26.10",
+    "diff": "^8.0.3"
   }
 }

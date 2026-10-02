@@ -15,7 +15,13 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/no-observers': 'warn'
+    'ember/no-observers': 'warn',
+    // Preserve the classic component API for existing consumers.
+    'ember/no-classic-components': 'off',
+    'ember/no-classic-classes': 'off',
+    'ember/require-tagless-components': 'off',
+    'ember/no-component-lifecycle-hooks': 'off',
+    'ember/no-get': 'off'
   },
   overrides: [
     // node files
